@@ -6,7 +6,7 @@ import ru.netology.domain.MoviePoster;
 @NoArgsConstructor
 public class PosterManager {
     private MoviePoster[] films = new MoviePoster[0];
-    int limitLengthForShow = 10;
+    private int limitLengthForShow = 10;
 
     public PosterManager(int limitLengthForShow) {
         this.limitLengthForShow = limitLengthForShow;
