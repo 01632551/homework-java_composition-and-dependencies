@@ -8,7 +8,7 @@ public class PosterManager {
     private MoviePoster[] films = new MoviePoster[0];
     int limitLengthForShow = 10;
 
-    public PosterManager(int limitLengthForShow){
+    public PosterManager(int limitLengthForShow) {
         this.limitLengthForShow = limitLengthForShow;
     }
 
@@ -28,20 +28,21 @@ public class PosterManager {
         films = tmp;
     }
 
-    public MoviePoster[] getAllFilms(){
+    public MoviePoster[] getAllFilms() {
         return films;
     }
 
-    public MoviePoster[] showLastFilms(){
+    public MoviePoster[] showLastFilms() {
         int resultLength;
-        if (limitLengthForShow == 10 && films.length < 10) {
+        if (limitLengthForShow == 10 && films.length < 10
+                || limitLengthForShow >= films.length) {
             resultLength = films.length;
-        }else{
+        } else {
             resultLength = limitLengthForShow;
         }
 
         MoviePoster[] result = new MoviePoster[resultLength];
-        for (int i = 0; i < resultLength; i ++){
+        for (int i = 0; i < resultLength; i++) {
             int index = films.length - i - 1;
             result[i] = films[index];
         }
